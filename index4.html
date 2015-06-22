@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>Document</title>
+<style type="text/css">
+*{
+	margin: 0;padding: 0;
+}
+	html,body{
+	width: 100%;
+	height:100%;
+	background-color: #ffffff;
+	position: relative;
+	min-width: 320px;
+	font-family: "微软雅黑";
+	overflow: hidden;
+	}
+	p{
+		font-size:16px;
+	}
+	#norun{
+		width: 100%;
+		height:120px;
+		background: url(img/1.png) no-repeat 0 0;
+		background-size: 100% 100%;
+		position:fixed;
+		top: 0;
+		left: 0;
+		z-index:2;
+	}
+
+	#box4{
+		width: 100%;
+		height:100%;
+		background: url(img/bg4.png) no-repeat 0 0;
+		background-size: 100% 100%;	
+		position: absolute;
+		left: 0;
+		top: 0;
+		}
+	#box4 h2{
+		font-size:35px;
+		margin-bottom: 3%;
+	}
+	#box4 p:nth-of-type(2){
+		margin-bottom: 3%;
+	}
+	#box4 p:nth-of-type(5){
+		margin-bottom:3%;
+	}
+	.inform{
+		margin:136px 0 0 0;
+		width: 66%;
+		padding: 0 17%;
+		color:black;
+		z-index:10;
+		position: relative;
+		/*opacity: 0;*/
+	}
+	.inform p{
+		font-size: 12px;
+
+	}
+	#video{
+		display: block;
+		width:100%;
+		height:100px;
+		background: url(img/vedio.png) no-repeat;
+		background-size: 100% 100%;
+		text-align: center;
+	}
+	#video img{
+		margin-top:10px;
+	}
+	
+</style>
+</head>
+<body>
+		<!-- <div id="norun"></div> -->
+		<div id="box4">
+			<div class="inform">
+				<h3>2014全新迈腾</h3>
+				<h2>智慧上市</h2>
+				<p>在路上，有选择和决定</p>
+				<p>亦能收获更多智慧感悟 </p>
+
+				<p>不一样的视觉巡礼与试驾征程</p>
+				<p>彰显您无与伦比的智慧力量</p>
+				<p>感受与众不同的智慧心路  </p>
+
+				<p>我们愿与你一起，在路上见证这一切</p>
+				<p>敬邀您来体验</p>
+
+				<a href="###" id="video">
+					<img src="img/play.png" alt="">
+				</a>
+			</div>			
+		</div>	
+</body>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="touch.js"></script>
+<script type="text/javascript">
+	
+</script>
+</html>

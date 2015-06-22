@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>Document</title>
+<style type="text/css">
+*{
+	margin: 0;padding: 0;
+}
+	/*html,body{
+	width: 100%;
+	height:100%;
+	background-color: #ffffff;
+	position: relative;
+	min-width: 320px;
+	font-family: "微软雅黑";
+	overflow: hidden;
+	}
+	p{
+		font-size:16px;
+	}
+	#norun{
+		width: 100%;
+		height:145px;
+		background: url(img/1.png) no-repeat 0 0;
+		background-size: 100% 100%;
+		position:fixed;
+		top: 0;
+		left: 0;
+		z-index:2;
+	}*/
+
+	#box2{
+		width: 100%;
+		height:100%;
+		/*background: url(img/bg2.png) no-repeat 0 0;
+		background-size: 100% 100%;	*/
+		position: absolute;
+		left: 0;
+		top: 0;
+		}
+	.inform{
+		margin:166px 0 0 0;
+		width: 66%;
+		padding: 0 17%;
+		color:white;
+		z-index:2;
+		top:50px;
+		position: relative;
+		opacity: 0;
+	}
+	.inform p{
+		font-family: "微软雅黑";
+		font-size: 14px;
+		color:#fff;
+		line-height: 18px;
+	}
+	.mask{
+		height: 100%;
+		width:100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-size: 100% 100%; 
+		z-index: 1;
+		overflow: hidden;
+	}
+	.left{
+		background: url(img/left.png) repeat-y;
+		background-size: 100% 100%; 
+		width:17%;
+		height: 200%;
+		position: relative;
+		top: 0;
+		left: 0;
+		float: left;
+		overflow: hidden;
+	}
+	.center{
+		background: url(img/load2.png) repeat-y;
+		background-size: 100% 100%; 
+		width:66%;
+		height: 200%;
+		position: relative;
+		left: 0;
+		top: 0;
+		float: left;
+		z-index: 2;
+	}
+	.right{
+		background: url(img/right.png) repeat-y;
+		background-size: 100% 100%; 
+		position: relative;
+		top: 0;
+		left:0;
+		width:17%;
+		height: 200%;
+		float: left;
+		overflow: hidden;
+	}
+	.car{
+		width:33%;
+		height: 200px;
+		background: url(img/car.png) no-repeat;
+		background-size: 100% 100%;
+		position: absolute;
+		bottom:-33%;
+		left:33%;
+		z-index: 4;
+	}
+	.panel{
+		width: 100%;
+		height: 60px;
+		background-color: rgba(200,200,193,0.7);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 5;
+	}
+	.panel h4{
+		padding-top: 2px;
+		text-align: center;
+		color:blue;
+	}
+</style>
+</head>
+<body>
+		<div id="norun"></div>
+		<div id="box2">
+
+			<div class="mask">
+				<div class="left">
+					<!-- <div class="tree"></div> -->
+				</div>
+				<div class="center"></div>
+				<div class="right">
+					<!-- <div class="tree"></div> -->
+				</div>
+			</div>
+			<div class="inform">
+				<h2>践行智慧,迈腾车道保持</h2>
+				<p>在路上不只需要澎湃的动力</p>
+				<p>发动智慧，不偏离，才能保持笔直的行</p>
+				<p>车如此，人生亦如此</p>
+			</div>
+			<div class="car">	
+			</div>
+			<div class="panel">
+				<h4>请保持手机平衡，避免车辆偏离车道</h4>
+			</div>
+		</div>
+	
+		
+</body>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="touch.js"></script>
+<script type="text/javascript">
+	var bol=true;
+	var num=0;
+	var speed=0;
+	var mh=0;
+	var windowheight=document.clientHeight||document.documentElement.clientHeight;
+	setInterval(function(){
+		num-=50;
+		speed-=50;
+		mh+=1;
+		if(num<=-windowheight)
+		{
+			num=0;
+		}
+		$(".center").css({
+			top:num
+		})
+		if(speed<=-windowheight)
+		{
+			speed=0;
+		}
+		if(mh>5)
+		{
+			mh=0;
+		}
+		$(".left").css({
+			opacity:1,
+			top:speed,
+			webkitFilter:"blur(mh+'px')"
+		})
+		$(".right").css({
+			opacity:1,
+			top:speed,
+			webkitFilter:"blur(mh+'px')"
+		})
+		$(".car").animate({
+		bottom:17+"%"
+		},"slow",function(){
+			this.style.bottom="16%";
+			$("#box2 .inform").animate({
+				opacity:1,
+				top:0
+			})
+		})
+	},30)
+
+</script>
+</html>

@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>Document</title>
+<style type="text/css">
+*{
+	margin: 0;padding: 0;
+}
+	html,body{
+	width: 100%;
+	height:100%;
+	min-width: 320px;
+	background-color: #ffffff;
+	position: relative;
+	font-family: "微软雅黑";
+	}
+	ul,li{
+		list-style: none;
+	}
+	#box{
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+	}
+	ul{
+		width: 100%;
+		height: 500%;
+	}
+	li{
+		width: 100%;
+		height: 20%;
+		z-index: 5;
+		position: relative;
+	}
+	#norun{
+		width: 100%;
+		height:120px;
+		background: url(img/1.png) no-repeat 0 0;
+		background-size: 100% 100%;
+		position:fixed;
+		top: 0;
+		left: 0;
+		z-index:6;
+	}
+	#box1{
+		width: 100%;
+		height:100%;
+		background: url(img/bg1.png) no-repeat 0 0;
+		background-size: 100% 100%;	
+		position: absolute;
+		left: 0;
+		top:0;
+	}
+	#plate{
+		width: 80%;
+		height:150px;
+		padding: 20px 10% 0;
+		background-color: rgba(208,198,194,0.7);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+	p{
+		font-size:16px;
+	}
+	select{
+		border:1px solid darkblue;
+		color: darkblue;
+	}
+
+	/*/page2/*/
+	#box2{
+		width: 100%;
+		height:100%;
+		/*background: url(img/bg2.png) no-repeat 0 0;
+		background-size: 100% 100%;	*/
+		position: absolute;
+		left: 0;
+		top: 0;
+		}
+	.inform{
+		margin:166px 0 0 0;
+		width: 66%;
+		padding: 0 17%;
+		color:white;
+		z-index:2;
+		top:50px;
+		position: relative;
+		opacity: 0;
+	}
+	.inform p{
+		font-family: "微软雅黑";
+		font-size: 14px;
+		color:#fff;
+		line-height: 18px;
+	}
+	.mask{
+		height: 100%;
+		width:100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-size: 100% 100%; 
+		z-index: 1;
+		overflow: hidden;
+	}
+	.left{
+		background: url(img/left.png) repeat-y;
+		background-size: 100% 100%; 
+		width:17%;
+		height: 200%;
+		position: relative;
+		top: 0;
+		left: 0;
+		float: left;
+		overflow: hidden;
+	}
+	.center{
+		background: url(img/load2.png) repeat-y;
+		background-size: 100% 100%; 
+		width:66%;
+		height: 200%;
+		position: relative;
+		left: 0;
+		top: 0;
+		float: left;
+		z-index: 2;
+	}
+	.right{
+		background: url(img/right.png) repeat-y;
+		background-size: 100% 100%; 
+		position: relative;
+		top: 0;
+		left:0;
+		width:17%;
+		height: 200%;
+		float: left;
+		overflow: hidden;
+	}
+	.car{
+		width:33%;
+		height: 200px;
+		background: url(img/car.png) no-repeat;
+		background-size: 100% 100%;
+		position: absolute;
+		bottom:-33%;
+		left:33%;
+		z-index: 4;
+	}
+	.panel{
+		width: 100%;
+		height: 60px;
+		background-color: rgba(200,200,193,0.7);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 5;
+	}
+	.panel h4{
+		padding-top: 2px;
+		text-align: center;
+		color:blue;
+	}
+	/*page3*/
+
+	#box3{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: url(img/bg3.png) no-repeat;
+		background-size: 100% 100%;
+		overflow: hidden;
+	}
+	.panel{
+		width: 100%;
+		height: 60px;
+		background-color: rgba(200,200,193,0.7);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 5;
+	}
+	.panel h4{
+		padding-top: 2px;
+		text-align: center;
+		color:blue;
+	}
+	#car{
+		width: 52%;
+		height: 200px;
+		position: absolute;
+		bottom: -200px;
+		right:-52%;
+		background: url(img/car3.png) no-repeat;
+		background-size: 100% 100%;
+	}
+	#light{
+		width: 50%;
+		height: 200px;
+		position: absolute;
+		bottom:-200px;
+		right: -45%;
+		background: url(img/light.png) no-repeat;
+		background-size: 100% 100%;
+		-webkit-transform:skewX(45deg);
+		opacity:0.8
+	}
+	#turn{
+		width: 40%;
+		height: 40px;
+		background: url(img/swiper.png) no-repeat;
+		background-size: 100% 100%;
+		position: absolute;
+		left: 13%;
+		bottom:38%;
+		z-index: 10;
+		display: none;
+	}
+	#turn img{
+		width: 8%;
+		position: relative;
+		top:12px;
+		left:20px;
+	}
+	.inform{
+		margin:136px 0 0 0;
+		width: 66%;
+		padding: 0 17%;
+		color:white;
+		z-index:10;
+		opacity: 0;
+	}
+	.inform p{
+		font-size: 12px;
+	}
+	/*page4*/
+
+	#box4{
+		width: 100%;
+		height:100%;
+		background: url(img/bg4.png) no-repeat 0 0;
+		background-size: 100% 100%;	
+		position: absolute;
+		left: 0;
+		top: 0;
+		}
+	#box4 h2{
+		font-size:35px;
+		margin-bottom: 3%;
+	}
+	#box4 p:nth-of-type(2){
+		margin-bottom: 3%;
+	}
+	#box4 p:nth-of-type(5){
+		margin-bottom:3%;
+	}
+	.inform{
+		margin:136px 0 0 0;
+		width: 66%;
+		padding: 0 17%;
+		color:black;
+		z-index:10;
+		position: relative;
+		/*opacity: 0;*/
+	}
+	.inform p{
+		font-size: 12px;
+
+	}
+	#video{
+		display: block;
+		width:100%;
+		height:100px;
+		background: url(img/vedio.png) no-repeat;
+		background-size: 100% 100%;
+		text-align: center;
+	}
+	#video img{
+		margin-top:10px;
+	}
+
+	/*page5*/
+	#box5{
+		width: 100%;
+		height:100%;
+		background: url(img/bg5.png) no-repeat 0 0;
+		background-size: 100% 100%;	
+		position: absolute;
+		left: 0;
+		top: 0;
+		}
+	.inform2{
+		margin-top: 180px;
+		width: 40%;
+		padding: 0 30%;
+		color:#00529c;
+	}
+	.inform2 input{
+		width:100%;
+		background-color: rgba(135,161,174,0.5);
+		border: none;
+		color:#00529c;
+		margin-bottom:5px;
+	}
+
+</style>
+</head>
+<body>
+		<div id="norun"></div>
+		
+		<div id="box">
+		<ul>
+			<li>
+					<div id="box1">
+					<div id="plate">
+					<h1>在路上，践行智慧</h1>
+					<p>全新迈腾情景试驾</p>
+					<p>为你带来不一样的驾型之旅</p>
+					<p>体验耳目一新的智慧之旅</p>
+					<select name="" id="">
+						<option value="">欢迎莅临试驾</option>
+					</select>	
+					</div>
+				</div>
+			</li>
+			<li>
+						<div id="box2">
+
+						<div class="mask">
+						<div class="left">
+							<!-- <div class="tree"></div> -->
+						</div>
+						<div class="center"></div>
+						<div class="right">
+							<!-- <div class="tree"></div> -->
+						</div>
+					</div>
+					<div class="inform">
+						<h2>践行智慧,迈腾车道保持</h2>
+						<p>在路上不只需要澎湃的动力</p>
+						<p>发动智慧，不偏离，才能保持笔直的行</p>
+						<p>车如此，人生亦如此</p>
+					</div>
+					<div class="car">	
+					</div>
+					<div class="panel">
+						<h4>请保持手机平衡，避免车辆偏离车道</h4>
+					</div>
+				</div>
+			</li>
+			<li>
+					<div id="box3">
+					<div class="inform">
+						<h4>践行智慧，迈腾动态灯光辅助</h4>
+						<p>在路上不能只关注眼前的情况</p>
+						<p>下一步决定命运，发动智慧</p>
+						<p>换个角度，才能辨别前路</p>
+					</div>
+					<div id="turn">
+						<img src="img/gt.png" alt="">
+					</div>
+					<div id="light"></div>
+					<div id="car"></div>
+					<div class="panel">
+						<h4>转向辅助灯，提前照亮未到达区域</h4>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="box4">
+					<div class="inform">
+					<h3>2014全新迈腾</h3>
+					<h2>智慧上市</h2>
+					<p>在路上，有选择和决定</p>
+					<p>亦能收获更多智慧感悟 </p>
+
+					<p>不一样的视觉巡礼与试驾征程</p>
+					<p>彰显您无与伦比的智慧力量</p>
+					<p>感受与众不同的智慧心路  </p>
+
+					<p>我们愿与你一起，在路上见证这一切</p>
+					<p>敬邀您来体验</p>
+
+					<a href="###" id="video">
+						<img src="img/play.png" alt="">
+					</a>
+					</div>			
+				</div>	
+			</li>
+			<li>
+					<div id="box5">
+					<div class="inform2">
+						<h3>试驾邀请</h3>
+						<form action="">
+							<input type="text"  value="真实姓名">
+							<input type="text"  value="联系电话">
+							<input type="text"  value="电子邮箱">
+							<p><span style="border:1px solid blue">预约试驾</span></p>
+						</form>	
+					</select>	
+					</div>			
+				</div>	
+
+			</li>
+		</ul>
+	</div>	
+</body>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="touch.js"></script>
+<script type="text/javascript">
+
+	var plate=document.getElementById('plate');
+	touch.on("#plate","touchstart",function (ev){
+
+	ev.preventDefault();
+	});
+	var timer=null;
+	var num=0;
+	var timer2=0;
+	var box1=document.getElementById("box1");
+	var itop=box1.offsetTop;
+	var iheight=box1.offsetHeight;
+	touch.on("#plate","swipeup",function (ev){
+		var count=0;
+		clearInterval(timer)
+		timer=setInterval(function(){
+			count+=30;
+			if(count>=iheight)
+			{	
+				clearInterval(timer);
+				count=iheight;
+			}
+			box1.style.top=itop-count+"px";
+
+		},10)
+	})
+
+	// page2
+	var bol=true;
+	var num=0;
+	var speed=0;
+	var mh=0;
+	var windowheight=document.clientHeight||document.documentElement.clientHeight;
+	setInterval(function(){
+		num-=50;
+		speed-=50;
+		mh+=1;
+		if(num<=-windowheight)
+		{
+			num=0;
+		}
+		$(".center").css({
+			top:num
+		})
+		if(speed<=-windowheight)
+		{
+			speed=0;
+		}
+		if(mh>5)
+		{
+			mh=0;
+		}
+		$(".left").css({
+			opacity:1,
+			top:speed,
+			webkitFilter:"blur(mh+'px')"
+		})
+		$(".right").css({
+			opacity:1,
+			top:speed,
+			webkitFilter:"blur(mh+'px')"
+		})
+		$(".car").animate({
+		bottom:17+"%"
+		},"slow",function(){
+			this.style.bottom="16%";
+			$("#box2 .inform").animate({
+				opacity:1,
+				top:0
+			})
+		})
+	},30)
+			 
+	
+	
+
+</script>
+</html>
